@@ -10,9 +10,17 @@ namespace xadrez
             ImprimirTabuleiro(partida.Tabuleiro);
             ImprimirPecasCapturadas(partida);
             Console.WriteLine($"\n\nTurno: {partida.Turno}");
-            Console.WriteLine($"Aguardando jogada: {partida.JogadorAtual}");
-            if(partida.Xeque)
-                Console.WriteLine("XEQUE!");
+            if (!partida.Terminada)
+            {
+                Console.WriteLine($"Aguardando jogada: {partida.JogadorAtual}");
+                if (partida.Xeque)
+                    Console.WriteLine("XEQUE!");
+            }
+            else
+            {
+                Console.WriteLine("XEQUEMATE!");
+                Console.WriteLine($"Vencedor: {partida.JogadorAtual}");
+            }
         }
         public static void ImprimirTabuleiro(Tabuleiro tabuleiro)
         {
