@@ -36,6 +36,14 @@
                 throw new TabuleiroException("Posição inválida");
             }
         }
+        public Peca RetirarPeca(Posicao posicao)
+        {
+            if (Peca(posicao) == null) return null;
+            Peca aux = Peca(posicao);
+            aux.Posicao = null;
+            Pecas[posicao.Linha, posicao.Coluna] = null;
+            return aux;
+        }
         public bool PosicaoValida(Posicao posicao)
         {
             if (posicao.Linha >= Linhas || posicao.Linha < 0 || posicao.Coluna >= Colunas || posicao.Coluna < 0)

@@ -13,5 +13,9 @@
             Cor = cor;
             QuantMovimentos = 0;
         }
+        public void IncrementarQtdMovimentos()
+        {
+            QuantMovimentos++;
+        }
     }
 }
