@@ -107,10 +107,18 @@ namespace xadrez
 
         public static PosicaoXadrez LerPosicaoXadrez()
         {
-            string s = Console.ReadLine();
-            char coluna = s[0];
-            int linha = int.Parse(s[1] + "");
-            return new PosicaoXadrez(coluna, linha);
+            try
+            {
+
+                string s = Console.ReadLine();
+                char coluna = s[0];
+                int linha = int.Parse(s[1] + "");
+                return new PosicaoXadrez(coluna, linha);
+            }
+            catch (Exception)
+            {
+                throw new TabuleiroException("Valor inválido!");
+            }
         }
     }
 }
